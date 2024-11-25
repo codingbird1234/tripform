@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여행사 토탈 ERP 솔루션</title>
+  </head>
+  <body>
+    <h1>여행사 토탈 ERP 솔루션</h1>
+    <h1>소개서 요청</h1>
+    <form id="companyForm">
+      <label for="companyName">회사명:</label>
+      <input
+        type="text"
+        id="companyName"
+        name="companyName"
+        required
+      /><br /><br />
+
+      <label for="managerName">담당자명:</label>
+      <input
+        type="text"
+        id="managerName"
+        name="managerName"
+        required
+      /><br /><br />
+
+      <label for="email">회사 E-mail:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="contactNumber">연락처:</label>
+      <input
+        type="text"
+        id="contactNumber"
+        name="contactNumber"
+        required
+      /><br /><br />
+
+      <label>
+        <input type="checkbox" id="agreeAll" />
+        모두 동의합니다 </label
+      ><br /><br />
+      <label>
+        <input type="checkbox" id="is14OrOlder" />
+        만 14세 이상입니다. </label
+      ><br />
+
+      <label>
+        <input type="checkbox" id="agreePrivacy" required />
+        [필수] 개인정보 수집 및 이용 동의 </label
+      ><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="index.js"></script>
+  </body>
+</html>
