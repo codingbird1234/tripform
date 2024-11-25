@@ -37,32 +37,35 @@ document.getElementById("companyForm").addEventListener("submit", async (e) => {
   // FormData 생성 및 서버 전송
   const formData = new FormData(e.target);
 
-  formData.set("is14OrOlder", is14OrOlder.checked ? "true" : "false");
-  formData.set("agreePrivacy", agreePrivacy.checked ? "true" : "false");
+  // 추가 데이터 설정
+  formData.set(
+    "is14OrOlder",
+    document.getElementById("is14OrOlder").checked ? "true" : "false"
+  );
+  formData.set(
+    "agreePrivacy",
+    document.getElementById("agreePrivacy").checked ? "true" : "false"
+  );
 
-  // FormData를 JSON 객체로 변환
-  const json = Object.fromEntries(formData);
-
-  console.log(Object.fromEntries(formData));
-
-  // Google Apps Script Web App URL
+  // 서버로 전송할 FormData
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbyc8sqGHiLbehXCFCKxHWQScCHpzepwgmzx5EXj3sqyGwnWSckwg1s4t9fXoATcbufseQ/exec";
+    "https://script.google.com/macros/s/AKfycby4ausHMf-gv7QOlG4pUbgf095fGaQTCC_5uNKmJ0AkXiOL5GwagLPusmGxWlR2tBAmVQ/exec";
   try {
     const response = await fetch(scriptURL, {
       method: "POST",
-      //mode: "no-cors", // CORS 우회 (응답 데이터 읽기 불가)
-      body: JSON.stringify(json),
-      headers: { "Content-Type": "application/json" },
+      body: formData,
+      // mode: "no-cors", // 주석 해제 시 응답 데이터 읽기 불가
     });
 
     if (response.ok) {
+      const result = await response.json();
+      console.log("Success:", result);
       alert("제출되었습니다!");
     } else {
       alert("제출에 실패하였습니다.");
     }
   } catch (error) {
     console.error("Error:", error);
-    alert("제출과정 중 오류가 발생하였습니다.");
+    alert("제출 과정 중 오류가 발생하였습니다.");
   }
 });
