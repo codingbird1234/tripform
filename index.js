@@ -55,21 +55,16 @@ document.getElementById("companyForm").addEventListener("submit", async (e) => {
 
   // 서버로 전송할 FormData
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbxa3yeU7gw2I-hK4o8iOMeM4Lf8KxRfhIXMMcIAZCrOG8-21eVlVBNAxms3FagX_KXsWw/exec";
+    "https://script.google.com/macros/s/AKfycbzzFgzi5UGf6BhqR3i816wj6FTD9GR6dxjGreLOr6HBEPy5fF6r614AWdiSjlMMik2hnw/exec";
   try {
-    const response = await fetch(scriptURL, {
+    fetch(scriptURL, {
       method: "POST",
       body: formData,
       // mode: "no-cors", // 주석 해제 시 응답 데이터 읽기 불가
     });
 
-    if (response.ok) {
-      const result = await response.json();
-      console.log("Success:", result);
-      alert("제출되었습니다!");
-    } else {
-      alert("제출에 실패하였습니다.");
-    }
+    alert("제출이 완료되었습니다.");
+    window.location.reload();
   } catch (error) {
     console.error("Error:", error);
     alert("제출 과정 중 오류가 발생하였습니다.");
