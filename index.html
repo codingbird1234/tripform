@@ -4,54 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>여행사 토탈 ERP 솔루션</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>여행사 토탈 ERP 솔루션</h1>
-    <h1>소개서 요청</h1>
+    <img src="STF_Logo.png" alt="logo" />
+    <h1>
+      여행사 토탈 ERP 솔루션, <br />
+      지금 시작해보세요
+    </h1>
+    <p style="text-decoration: underline; font-weight: bold">
+      관광기업 시스템 관리에 어려움을 겪고 계신가요? <br />여행사 솔루션 도입을
+      고민하고 계신가요?
+    </p>
+    <p>
+      간단한 정보를 입력하고 <br />여행사 토탈 ERP 솔루션 소개서를
+      받아보세요.<br />
+    </p>
+    <p>
+      관광혁신바우처 공식 수행사 소통파이브의 컨설턴트가 <br />기업 맞춤 컨설팅
+      안내를 도와드립니다.
+    </p>
     <form id="companyForm">
-      <label for="companyName">회사명:</label>
-      <input
-        type="text"
-        id="companyName"
-        name="companyName"
-        required
-      /><br /><br />
+      <div id="form-input">
+        <div class="form-group">
+          <label for="companyName">회사명</label>
+          <input type="text" id="companyName" name="companyName" required />
+        </div>
+        <div class="form-group">
+          <label for="managerName">담당자명</label>
+          <input type="text" id="managerName" name="managerName" required />
+        </div>
+        <div class="form-group">
+          <label for="email">회사 이메일</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="contactNumber">연락처</label>
+          <input type="text" id="contactNumber" name="contactNumber" required />
+        </div>
+      </div>
 
-      <label for="managerName">담당자명:</label>
-      <input
-        type="text"
-        id="managerName"
-        name="managerName"
-        required
-      /><br /><br />
-
-      <label for="email">회사 E-mail:</label>
-      <input type="email" id="email" name="email" required /><br /><br />
-
-      <label for="contactNumber">연락처:</label>
-      <input
-        type="text"
-        id="contactNumber"
-        name="contactNumber"
-        required
-      /><br /><br />
-
-      <label>
+      <div class="checkbox-group">
         <input type="checkbox" id="agreeAll" />
-        모두 동의합니다 </label
-      ><br /><br />
-      <label>
+        <label for="agreeAll">모두 동의합니다</label>
+      </div>
+
+      <br />
+
+      <div class="checkbox-group">
         <input type="checkbox" id="is14OrOlder" />
-        만 14세 이상입니다. </label
-      ><br />
+        <label for="is14OrOlder">만 14세 이상입니다.</label>
+      </div>
 
-      <label>
-        <input type="checkbox" id="agreePrivacy" required />
-        [필수] 개인정보 수집 및 이용 동의 </label
-      ><br /><br />
+      <div class="checkbox-group">
+        <input type="checkbox" id="agreePrivacy" name="areePrivacy" />
+        <label for="agreePrivacy">[필수] 개인정보 수집 및 이용 동의</label>
+      </div>
 
-      <button type="submit">Submit</button>
+      <div style="height: 30px"></div>
+
+      <button type="submit">여행업 솔루션 소개서 받고 컨설팅도 받아보기</button>
+
+      <a
+        href="https://sotongfive.kr/bbs/group.php?gr_id=portfolio"
+        target="_blank"
+        >소통파이브 포트폴리오 보러가기
+      </a>
     </form>
+
+    <div class="margin-box"></div>
 
     <script src="index.js"></script>
   </body>

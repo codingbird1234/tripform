@@ -24,12 +24,18 @@ document.getElementById("companyForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   // 필수 동의 체크 여부 확인
-  if (!document.getElementById("agreePrivacy").checked) {
+  if (
+    !document.getElementById("is14OrOlder").checked &&
+    !document.getElementById("agreePrivacy").checked
+  ) {
+    alert(
+      "만 14세 이상임을 체크해주세요.\n[필수] 모두 동의합니다를 체크해주세요."
+    );
+    return;
+  } else if (!document.getElementById("agreePrivacy").checked) {
     alert("[필수] 개인정보 수집 및 이용 동의를 체크해주세요.");
     return;
-  }
-
-  if (!document.getElementById("is14OrOlder").checked) {
+  } else if (!document.getElementById("is14OrOlder").checked) {
     alert("만 14세 이상임을 체크해주세요.");
     return;
   }
@@ -49,7 +55,7 @@ document.getElementById("companyForm").addEventListener("submit", async (e) => {
 
   // 서버로 전송할 FormData
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycby4ausHMf-gv7QOlG4pUbgf095fGaQTCC_5uNKmJ0AkXiOL5GwagLPusmGxWlR2tBAmVQ/exec";
+    "https://script.google.com/macros/s/AKfycbxa3yeU7gw2I-hK4o8iOMeM4Lf8KxRfhIXMMcIAZCrOG8-21eVlVBNAxms3FagX_KXsWw/exec";
   try {
     const response = await fetch(scriptURL, {
       method: "POST",
