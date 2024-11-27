@@ -53,14 +53,13 @@ document.getElementById("companyForm").addEventListener("submit", async (e) => {
     document.getElementById("agreePrivacy").checked ? "true" : "false"
   );
 
-  // 서버로 전송할 FormData
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbzzFgzi5UGf6BhqR3i816wj6FTD9GR6dxjGreLOr6HBEPy5fF6r614AWdiSjlMMik2hnw/exec";
+  // Apps Script URL 설정
+  const scriptURL = "Apps Script URL";
+
   try {
     fetch(scriptURL, {
       method: "POST",
       body: formData,
-      // mode: "no-cors", // 주석 해제 시 응답 데이터 읽기 불가
     });
 
     alert("제출이 완료되었습니다.");
